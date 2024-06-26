@@ -8,12 +8,14 @@ export default class UserController {
     this.userRepository = new UserRepository();
   }
 
+  //Sign up controller function to handle signup
   async signUp(req, res, next) {
     const { userName, email, password } = req.body;
     try {
       const userFromUserName = await this.userRepository.findUserByUserName(
         userName
       );
+      //duplicate username validation
       if (userFromUserName) {
         return res.status(400).json({
           success: false,
@@ -22,6 +24,7 @@ export default class UserController {
         });
       }
       const userFromEmail = await this.userRepository.findUserByEmail(email);
+      //duplicate email validation
       if (userFromEmail) {
         return res.status(400).json({
           success: false,
@@ -47,6 +50,7 @@ export default class UserController {
     }
   }
 
+  //Sign in controller function to handle signin
   async signin(req, res, next) {
     const { email, password } = req.body;
     try {
@@ -88,6 +92,7 @@ export default class UserController {
     }
   }
 
+  //check duplicate username controller function
   async checkUserName(req, res, next) {
     const { userName } = req.body;
     try {
@@ -115,6 +120,7 @@ export default class UserController {
     }
   }
 
+  //check duplicate email controller function
   async checkEmail(req, res, next) {
     const { email } = req.body;
     try {
