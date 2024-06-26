@@ -20,4 +20,8 @@ userRoutes.post("/checkUserName", (req, res, next) => {
   userController.checkUserName(req, res, next);
 });
 
+userRoutes.get("/get", (req, res, next) => {
+  return "This is get response";
+});
+
 export default userRoutes;
