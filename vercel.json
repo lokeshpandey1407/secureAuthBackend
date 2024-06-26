@@ -13,7 +13,7 @@
     },
     {
       "src": "/api/(.*)",
-      "dest": "/src/user.user.routes.js"
+      "dest": "/src/user/user.routes.js"
     }
   ]
 }
