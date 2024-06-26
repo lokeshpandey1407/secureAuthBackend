@@ -5,7 +5,11 @@ import userRoutes from "./src/user/user.routes.js";
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: "https://secure-auth-neon.vercel.app",
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/", (req, res, next) => {
