@@ -14,8 +14,9 @@ app.get("/", (req, res, next) => {
   res.send("Hello world");
 });
 
-app.post("/signup", (req, res, next) => {
-  userController.signUp(req, res, next);
+app.post("/findUser", async (req, res, next) => {
+  const user = await UserModel.findOne({ email: "lokesh@gmail.com" });
+  res.send(user);
 });
 
 app.use("/api/auth", userRoutes);
