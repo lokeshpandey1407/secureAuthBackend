@@ -6,7 +6,7 @@ import userRoutes from "./src/user/user.routes.js";
 const app = express();
 
 const corsOptions = {
-  origin: "https://secure-auth-neon.vercel.app",
+  origin: "*",
 };
 
 app.use(cors(corsOptions));
