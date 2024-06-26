@@ -12,6 +12,10 @@ app.get("/", (req, res, next) => {
   res.send("Hello world");
 });
 
+app.post("/test", (req, res, next) => {
+  res.send("Testing successful");
+});
+
 app.use("/api/auth", userRoutes);
 
 app.listen(process.env.PORT, () => {
