@@ -18,10 +18,5 @@ A secure authentication backend built with Node.js, Express, MongoDB, and Mongoo
 2. **Install dependencies**:
    npm install
 
-3. **Set up environment variables**: Create a `.env` file in the root directory with the following content:
-   PORT=3001
-   MONGO_URI=mongodb://localhost:27017/secure-auth
-   JWT_SECRET=your_jwt_secret
-
-4. **Start the server**:
+3. **Start the server**:
    npm start
